@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class InputValidation
+ * Class FormInputValidation
  */
-class InputValidation extends WireData implements Module
+class FormInputValidation extends WireData implements Module
 {
     public static $validator;
 
@@ -20,7 +20,7 @@ class InputValidation extends WireData implements Module
             'title' => 'ProcessWire Input Validation',
             'summary' => 'Validation Module, for checking POST data, etc, against a set of rules.',
 
-            'href' => 'https://github.com/brttd/InputValidation',
+            'href' => 'https://github.com/brttd/FormInputValidation',
 
             'icon' => 'check-square-o',
             'singular' => false,
@@ -31,7 +31,7 @@ class InputValidation extends WireData implements Module
     public function __construct()
     {
         if (!class_exists('Validator')) {
-            require_once(wire('config')->paths->InputValidation . DIRECTORY_SEPARATOR . 'Validator.class.php');
+            require_once(wire('config')->paths->FormInputValidation . DIRECTORY_SEPARATOR . 'Validator.class.php');
         }
 
         self::$validator = new Validator();
